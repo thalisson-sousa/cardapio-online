@@ -52,7 +52,7 @@ import { SocialButtonsComponent } from './components/social-buttons/social-butto
     MatDialogModule,
     MatButtonToggleModule,
     MatInputModule,
-    MatBadgeModule
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

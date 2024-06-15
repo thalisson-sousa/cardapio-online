@@ -2,18 +2,34 @@
   <div>
     <button
       mat-icon-button
+      [matMenuTriggerFor]="menu"
       class="example-icon"
       aria-label="Example icon-button with menu icon"
     >
       <mat-icon>menu</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Logar</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>info</mat-icon>
+        <span>Sobre</span>
+      </button>
+    </mat-menu>
     <span>{{ name }}</span>
   </div>
+
   <span class="example-spacer"></span>
   <div>
     <button
       mat-icon-button
-      matBadge="{{contador}}"
+      matBadge="{{ contador }}"
       matBadgeOverlap="false"
       matBadgePosition="above after"
       class="example-icon favorite-icon demo-section"
@@ -23,13 +39,13 @@
     </button>
     <button
       mat-button
-      [matMenuTriggerFor]="menu"
+      [matMenuTriggerFor]="social"
       class="example-icon"
       aria-label="Example icon-button with share icon"
     >
       <mat-icon>share</mat-icon>
     </button>
-    <mat-menu #menu="matMenu" class="social-menu">
+    <mat-menu #social="matMenu" class="social-menu">
       <app-social-buttons></app-social-buttons>
     </mat-menu>
   </div>
