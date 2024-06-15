@@ -23,6 +23,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainComponent } from './components/main/main.component';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
 import { ModalItemComponent } from './components/modal-item/modal-item.component';
+import { SocialButtonsComponent } from './components/social-buttons/social-buttons.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ModalItemComponent } from './components/modal-item/modal-item.component
     MainComponent,
     DialogBoxComponent,
     ModalItemComponent,
+    SocialButtonsComponent,
   ],
   imports: [
     BrowserModule,
