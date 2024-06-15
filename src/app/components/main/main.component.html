@@ -1,0 +1,24 @@
+<section>
+  <mat-accordion class="acordeon" >
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+      <mat-expansion-panel-header class="acordeon">
+        <h1>{{pedido.label}}</h1>
+      </mat-expansion-panel-header>
+      <div class="card-container">
+        <div class="card-item" (click)="openDialog()">
+          <div>
+            <mat-panel-title>
+              <h2>{{pedido.title}}</h2>
+            </mat-panel-title>
+            <mat-panel-description>
+              <p>{{pedido.price}}</p>
+            </mat-panel-description>
+          </div>
+          <div class="card-image">
+            <img src="{{pedido.image}}" alt="imagem do produto">
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</section>
