@@ -1,0 +1,48 @@
+section {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      max-width: 40%;
+      height: 5em;
+      border: 5px solid white;
+      margin-bottom: 1em;
+    }
+
+    span {
+      display: flex;
+      margin-top: 1em;
+      background: rgba(0, 0, 0, 0.6);
+
+      p {
+        margin: 0 1em;
+      }
+    }
+
+    button {
+      color: #58F12A;
+    }
+
+    button:hover {
+      color: #6EDF4C;
+    }
+  }
+}

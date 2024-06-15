@@ -1,0 +1,11 @@
+<section class="container" [ngStyle]="{'background-image': 'url(' + this.capa + ')'}">
+  <div>
+    <img src="{{image}}" alt="profile image">
+    <h1>{{name}}</h1>
+    <button mat-raised-button (click)="openDialog()" >{{button}}</button>
+    <span>
+      <mat-icon>schedule</mat-icon>
+      <p>{{description}}</p>
+    </span>
+  </div>
+</section>
