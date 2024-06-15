@@ -1,0 +1,25 @@
+section {
+  padding: 2em;
+
+  p {
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: rgb(19, 235, 44);
+    padding: 1em 0;
+    font-weight: bold;
+  }
+
+  .toggle-group {
+    margin-top: 1em;
+  }
+
+  mat-button-toggle-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 12px;
+    width: auto;
+  }
+}
+
