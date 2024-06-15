@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   name: string = "Mario Lanches";
+  contador: string = "1";
 }

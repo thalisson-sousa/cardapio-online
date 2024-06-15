@@ -7,13 +7,16 @@
     >
       <mat-icon>menu</mat-icon>
     </button>
-    <span>{{name}}</span>
+    <span>{{ name }}</span>
   </div>
   <span class="example-spacer"></span>
   <div>
     <button
       mat-icon-button
-      class="example-icon favorite-icon"
+      matBadge="{{contador}}"
+      matBadgeOverlap="false"
+      matBadgePosition="above after"
+      class="example-icon favorite-icon demo-section"
       aria-label="Example icon-button with heart icon"
     >
       <mat-icon>shopping_cart</mat-icon>

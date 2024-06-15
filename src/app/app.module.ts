@@ -14,6 +14,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatInputModule } from '@angular/material/input';
+import { MatBadgeModule } from '@angular/material/badge';
 
 import { UserComponent } from './pages/user/user.component';
 import { AdminComponent } from './pages/admin/admin.component';
@@ -51,6 +52,7 @@ import { SocialButtonsComponent } from './components/social-buttons/social-butto
     MatDialogModule,
     MatButtonToggleModule,
     MatInputModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
