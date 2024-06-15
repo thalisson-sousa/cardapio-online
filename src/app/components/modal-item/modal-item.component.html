@@ -1,0 +1,26 @@
+<section>
+  <img src="{{pedidos.image}}" alt="{{pedidos.title}}">
+  <div class="order">
+    <h3>DETALHES</h3>
+    <mat-divider></mat-divider>
+    <h1>{{pedidos.title}}</h1>
+    <span>{{pedidos.price}}</span>
+    <p>{{pedidos.description}}</p>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Observações</mat-label>
+      <textarea matInput placeholder="Ex. Retirar tomate..."></textarea>
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-raised-button color="primary">
+        <mat-icon>shopping_cart</mat-icon>
+        Carrinho
+      </button>
+      <button mat-raised-button color="warn">
+        <mat-icon>check_box</mat-icon>
+        Pedir
+      </button>
+    </div>
+  </div>
+</section>

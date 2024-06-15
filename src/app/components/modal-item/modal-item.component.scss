@@ -1,0 +1,36 @@
+section {
+  display: flex;
+  gap: 1em;
+  height: 100%;
+
+  h3 {
+    font-weight: bold;
+    margin-top: 1em;
+    text-align: center;
+  }
+
+  p {
+    margin-right: 1em;
+  }
+
+  order {
+    padding: 2em;
+  }
+
+  img {
+    width: 500px;
+  }
+
+  .observations {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1em;
+    justify-content: end;
+    margin-right: 1em;
+  }
+}
+
