@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule, importProvidersFrom } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { environment } from 'src/environments/environment';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,6 +27,9 @@ import { MainComponent } from './components/main/main.component';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
 import { ModalItemComponent } from './components/modal-item/modal-item.component';
 import { SocialButtonsComponent } from './components/social-buttons/social-buttons.component';
+
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -54,7 +59,10 @@ import { SocialButtonsComponent } from './components/social-buttons/social-butto
     MatInputModule,
     MatBadgeModule,
   ],
-  providers: [],
+  providers: [importProvidersFrom([
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+  ])],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
