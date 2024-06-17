@@ -1,7 +1,8 @@
 export interface Pedidos {
+  id: string,
   label: string,
   title: string,
   price: string,
   description: string,
-  image: string,
+  img: string,
   }
