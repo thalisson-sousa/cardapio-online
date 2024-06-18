@@ -1,24 +1,12 @@
 <section>
-  <mat-accordion class="acordeon">
-    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
-      <mat-expansion-panel-header class="acordeon">
-        <h1>Lanches</h1>
-      </mat-expansion-panel-header>
-      <div class="card-container">
-        <div class="card-item" (click)="openDialog(pedido.id)" *ngFor="let pedido of pedidos">
-          <div>
-            <mat-panel-title>
-              <h2>{{pedido.title}}</h2>
-            </mat-panel-title>
-            <mat-panel-description>
-              <p>R$ {{pedido.price}}</p>
-            </mat-panel-description>
-          </div>
-          <div class="card-image">
-            <img src="{{pedido.img}}" alt="imagem do produto">
-          </div>
-        </div>
+  <mat-tab-group>
+    <mat-tab
+      label="{{ category.categoria }}"
+      *ngFor="let category of categorias"
+    >
+      <div>
+        <app-accordion-item [categorias]="category"></app-accordion-item>
       </div>
-    </mat-expansion-panel>
-  </mat-accordion>
+    </mat-tab>
+  </mat-tab-group>
 </section>

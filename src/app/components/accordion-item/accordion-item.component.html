@@ -1,0 +1,26 @@
+<mat-accordion class="acordeon">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+    <mat-expansion-panel-header class="acordeon">
+      <h1>{{ categorias.categoria }}</h1>
+    </mat-expansion-panel-header>
+    <div class="card-container">
+      <div
+        class="card-item"
+        (click)="openDialog(pedido.id)"
+        *ngFor="let pedido of pedidos"
+      >
+        <div *ngIf="pedido.title">
+          <mat-panel-title>
+            <h2>{{ pedido.title }}</h2>
+          </mat-panel-title>
+          <mat-panel-description>
+            <p>R$ {{ pedido.price }}</p>
+          </mat-panel-description>
+        </div>
+        <div class="card-image">
+          <img src="{{ pedido.img }}" alt="imagem do produto" />
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
