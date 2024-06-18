@@ -8,6 +8,7 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Pedidos } from '../types/Pedidos';
+import { PageInfo } from '../types/PageInfo';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +17,7 @@ export class FirebaseServiceService {
   firestore = inject(Firestore);
   foodsCollection = collection(this.firestore, 'lanches');
   categoryCollection = collection(this.firestore, 'categoria');
+  pageInfoCollection = collection(this.firestore, 'pageInfo');
 
   constructor() {}
 
@@ -23,6 +25,12 @@ export class FirebaseServiceService {
     return collectionData(this.foodsCollection, {
       idField: 'id',
     }) as Observable<Pedidos[]>;
+  }
+
+  getInfosPage(): Observable<PageInfo[]> {
+    return collectionData(this.pageInfoCollection, {
+      idField: 'id',
+    }) as Observable<PageInfo[]>;
   }
 
   getFoodsFilter(categoria: any): Observable<Pedidos[]> {

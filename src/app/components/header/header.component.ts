@@ -1,20 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+import { FoodsService } from 'src/app/services/foods.service';
+import { PageInfo } from 'src/app/types/PageInfo';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
-  image: string = "https://img.freepik.com/fotos-gratis/hamburguer-duplo-americano-classico-isolado-no-fundo-branco_90220-1194.jpg?w=360";
-  name: string = "Lanche do Mario";
-  capa: string = "https://static.vecteezy.com/ti/vetor-gratis/p3/4903181-japones-comida-fundo-banner-vetor.jpg";
-  button: string = "Aberto Agora";
-  description: string = "50-80min";
+export class HeaderComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {}
+  infos!: PageInfo;
+
+  constructor(public dialog: MatDialog, private service: FoodsService) {}
+
+  ngOnInit(): void {
+    this.getInfos();
+  }
+
+  getInfos() {
+    this.service.getInfosPage().subscribe((info) => {
+      info.map((data) => {
+        this.infos = data;
+      })
+    })
+  }
 
   openDialog() {
     this.dialog.open(DialogBoxComponent, {

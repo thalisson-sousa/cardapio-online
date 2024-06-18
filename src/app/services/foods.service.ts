@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { FirebaseServiceService } from './firebase-service.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FoodsService {
+  constructor(private fireBase: FirebaseServiceService) {}
 
-  constructor(private fireBase: FirebaseServiceService) { }
+  getInfosPage() {
+    return this.fireBase.getInfosPage();
+  }
 
   getFoods() {
     return this.fireBase.getFoods();
