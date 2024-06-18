@@ -11,4 +11,12 @@ export class FoodsService {
   getFoods() {
     return this.fireBase.getFoods();
   }
+
+  getCategory() {
+    return this.fireBase.getCategory();
+  }
+
+  getFiltered(categoria: any) {
+    return this.fireBase.getFoodsFilter(categoria);
+  }
 }

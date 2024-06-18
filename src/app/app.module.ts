@@ -27,9 +27,11 @@ import { MainComponent } from './components/main/main.component';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
 import { ModalItemComponent } from './components/modal-item/modal-item.component';
 import { SocialButtonsComponent } from './components/social-buttons/social-buttons.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { AccordionItemComponent } from './components/accordion-item/accordion-item.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     DialogBoxComponent,
     ModalItemComponent,
     SocialButtonsComponent,
+    AccordionItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,11 +61,14 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     MatButtonToggleModule,
     MatInputModule,
     MatBadgeModule,
+    MatTabsModule,
   ],
-  providers: [importProvidersFrom([
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-  ])],
+  providers: [
+    importProvidersFrom([
+      provideFirebaseApp(() => initializeApp(environment.firebase)),
+      provideFirestore(() => getFirestore()),
+    ]),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -5,4 +5,5 @@ export interface Pedidos {
   price: string,
   description: string,
   img: string,
+  categoria: string,
   }
