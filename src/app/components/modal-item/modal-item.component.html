@@ -13,14 +13,15 @@
     </mat-form-field>
 
     <div class="actions">
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" (click)="addCart(pedidos)">
         <mat-icon>shopping_cart</mat-icon>
         Carrinho
       </button>
-      <button mat-raised-button color="warn">
+      <button mat-raised-button color="warn" (click)="imprimir()">
         <mat-icon>check_box</mat-icon>
         Pedir
       </button>
     </div>
+    <div *ngIf=""></div>
   </div>
 </section>

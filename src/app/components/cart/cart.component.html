@@ -1,0 +1,19 @@
+<section class="Cart" (mouseenter)="somar()">
+  <div class="cart-header">
+    <h1>Carrinho de compras</h1>
+    <button (click)="clear()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <div class="cart-items">
+    <section *ngFor="let item of itens">
+      <app-cart-item [item]="item"></app-cart-item>
+    </section>
+  </div>
+
+  <div class="cart-resume">
+    <p>Total:</p>
+    R$ {{total}}.00
+  </div>
+  <button class="finish-button">Finalizar Compra</button>
+</section>

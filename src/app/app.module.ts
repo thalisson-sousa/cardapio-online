@@ -28,10 +28,13 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
 import { ModalItemComponent } from './components/modal-item/modal-item.component';
 import { SocialButtonsComponent } from './components/social-buttons/social-buttons.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AccordionItemComponent } from './components/accordion-item/accordion-item.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,8 @@ import { AccordionItemComponent } from './components/accordion-item/accordion-it
     ModalItemComponent,
     SocialButtonsComponent,
     AccordionItemComponent,
+    CartComponent,
+    CartItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +67,7 @@ import { AccordionItemComponent } from './components/accordion-item/accordion-it
     MatInputModule,
     MatBadgeModule,
     MatTabsModule,
+    MatSidenavModule,
   ],
   providers: [
     importProvidersFrom([
