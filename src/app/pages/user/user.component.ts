@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class UserComponent {
   showCart = false;
 
-  change() {
+  onChange() {
     this.showCart = !this.showCart;
   }
 }

@@ -6,7 +6,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  @Output() Cart = new EventEmitter();
+  @Output() Cart: EventEmitter<any> = new EventEmitter();
 
   name: string = "Mario Lanches";
   contador: string = "1";
