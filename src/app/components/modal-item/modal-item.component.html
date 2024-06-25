@@ -4,7 +4,7 @@
     <h3>DETALHES</h3>
     <mat-divider></mat-divider>
     <h1>{{pedidos.title}}</h1>
-    <span>R$ {{pedidos.price}}</span>
+    <span>R$ {{pedidos.price}},00</span>
     <p>{{pedidos.description}}</p>
 
     <mat-form-field class="example-full-width">
@@ -17,7 +17,7 @@
         <mat-icon>shopping_cart</mat-icon>
         Carrinho
       </button>
-      <button mat-raised-button color="warn" (click)="imprimir()">
+      <button mat-raised-button color="warn">
         <mat-icon>check_box</mat-icon>
         Pedir
       </button>

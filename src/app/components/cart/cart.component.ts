@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Pedidos } from 'src/app/types/Pedidos';
 
@@ -22,7 +22,9 @@ export class CartComponent implements OnInit {
   }
 
   add() {
-    this.itens =  this.cartService.getCart();
+     this.cartService.getCart().subscribe((cart) => {
+      this.itens = cart
+    })
   }
 
   somar(): void {

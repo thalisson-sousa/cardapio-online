@@ -1,7 +1,9 @@
+import { UserComponent } from './../../pages/user/user.component';
 import { CartService } from './../../services/cart.service';
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject} from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Pedidos } from 'src/app/types/Pedidos';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-modal-item',
@@ -15,10 +17,4 @@ export class ModalItemComponent {
   addCart(data: Pedidos) {
     this.serviceCart.addCart(data);
   }
-
-  imprimir() {
-    let cache = this.serviceCart.getCart()
-    console.log(cache);
-  }
-
 }

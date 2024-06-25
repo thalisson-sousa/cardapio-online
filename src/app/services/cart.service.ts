@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Pedidos } from '../types/Pedidos';
+import { Observable, of } from 'rxjs';
+import { UserComponent } from '../pages/user/user.component';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
+  carts: Pedidos[] = [];
 
-  cart: Pedidos[] = [];
+  constructor() {}
 
-  constructor() { }
-
-   addCart(pedido: Pedidos) {
-    this.cart.push(pedido);
+  addCart(pedido: Pedidos) {
+    this.carts.push(pedido);
   }
 
-  getCart(): Pedidos[] {
-    return this.cart;
+  getCart(): Observable<Pedidos[]> {
+    const cart = of(this.carts);
+    return cart;
   }
-
-
 }
