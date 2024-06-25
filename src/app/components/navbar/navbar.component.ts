@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Injectable, Input, Output, signal } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { EventEmitterService } from 'src/app/services/event-emitter.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,8 +12,12 @@ export class NavbarComponent {
   @Output() Cart: EventEmitter<any> = new EventEmitter();
 
   name: string = "Mario Lanches";
+  contador: number = 0;
 
-  constructor() {}
+  constructor() {
+    EventEmitterService.get('updateNumberCart').subscribe(() => this.contador += 1);
+    EventEmitterService.get('clearList').subscribe(count => this.contador = count);
+  }
 
   feedback() {
     this.Cart.emit();

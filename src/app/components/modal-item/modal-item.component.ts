@@ -1,9 +1,8 @@
-import { UserComponent } from './../../pages/user/user.component';
 import { CartService } from './../../services/cart.service';
 import { Component, Inject} from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Pedidos } from 'src/app/types/Pedidos';
-import { NavbarComponent } from '../navbar/navbar.component';
+import { EventEmitterService } from 'src/app/services/event-emitter.service';
 
 @Component({
   selector: 'app-modal-item',
@@ -16,5 +15,6 @@ export class ModalItemComponent {
 
   addCart(data: Pedidos) {
     this.serviceCart.addCart(data);
+    EventEmitterService.get('updateNumberCart').emit();
   }
 }

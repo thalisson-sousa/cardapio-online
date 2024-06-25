@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { EventEmitterService } from 'src/app/services/event-emitter.service';
 import { Pedidos } from 'src/app/types/Pedidos';
 
 @Component({
@@ -18,7 +19,10 @@ export class CartComponent implements OnInit {
   }
 
   clear() {
-    this.itens = [];
+    while(this.itens.length) {
+      this.itens.pop()
+    }
+    EventEmitterService.get('clearList').emit(0);
   }
 
   add() {
