@@ -17,6 +17,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { UserComponent } from './pages/user/user.component';
 import { AdminComponent } from './pages/admin/admin.component';
@@ -28,13 +30,14 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
 import { ModalItemComponent } from './components/modal-item/modal-item.component';
 import { SocialButtonsComponent } from './components/social-buttons/social-buttons.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AccordionItemComponent } from './components/accordion-item/accordion-item.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,7 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     AccordionItemComponent,
     CartComponent,
     CartItemComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +72,8 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     MatBadgeModule,
     MatTabsModule,
     MatSidenavModule,
+    MatFormFieldModule,
+    ScrollingModule,
   ],
   providers: [
     importProvidersFrom([

@@ -9,6 +9,7 @@ import {
 import { Observable } from 'rxjs';
 import { Pedidos } from '../types/Pedidos';
 import { PageInfo } from '../types/PageInfo';
+import { deleteDoc, doc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -46,5 +47,13 @@ export class FirebaseServiceService {
     return collectionData(this.categoryCollection, {
       idField: 'id',
     }) as Observable<any[]>;
+  }
+
+  async deletarLanche(id: any) {
+    await deleteDoc(doc(this.foodsCollection, id))
+  }
+
+  async deletarCategoria(id: any) {
+    await deleteDoc(doc(this.categoryCollection, id))
   }
 }
