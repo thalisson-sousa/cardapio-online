@@ -1,13 +1,13 @@
 <section>
-  <form>
+  <form [formGroup]="form">
     <mat-form-field appearance="outline">
       <mat-label>Nome da Loja</mat-label>
-      <input matInput />
+      <input matInput formControlName="name" />
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Horário de funcionamento</mat-label>
-      <input matInput />
+      <input matInput formControlName="duration" />
     </mat-form-field>
 
     <div class="fileInputs">
@@ -16,7 +16,7 @@
           Alterar Capa
           <mat-icon>attach_file</mat-icon>
         </label>
-        <input type="file" name="capa" id="capa" />
+        <input type="file" name="capa" id="capa" formControlName="capa" />
       </div>
 
       <div>
@@ -24,10 +24,10 @@
           <span>Alterar Foto</span>
           <mat-icon>attach_file</mat-icon>
         </label>
-        <input type="file" name="perfil" id="perfil" />
+        <input type="file" name="perfil" id="perfil" formControlName="image" />
       </div>
     </div>
 
-    <button mat-raised-button color="primary">Enviar</button>
+    <button mat-raised-button color="primary" (click)="submit()">Enviar</button>
   </form>
 </section>
