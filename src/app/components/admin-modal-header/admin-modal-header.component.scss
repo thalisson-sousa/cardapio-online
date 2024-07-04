@@ -1,0 +1,69 @@
+section form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-top: 1em;
+  align-items: center;
+  width: 31.25rem;
+  height: 25rem;
+
+  .inputText {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  label {
+    padding: 1.25rem 0.313rem;
+    width: 12.5rem;
+    border: 1px solid #00000099;
+    background: transparent;
+    color: #00000099;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+  }
+
+  label:hover {
+    border: 2px solid #673ab7;
+    color: #673ab7;
+    padding: 1.188rem 0.25rem;
+  }
+
+  .fileInputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  mat-form-field, button {
+    width: 26.5rem;
+  }
+
+  button {
+    padding: 2em;
+  }
+
+}
+
+@media (max-width: 500px) {
+  section form {
+    max-width: 300px;
+    height: 80%;
+    padding: 1em 0;
+  }
+
+  mat-form-field, button {
+    max-width: 70%;
+  }
+
+  .fileInputs {
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 2em;
+  }
+}

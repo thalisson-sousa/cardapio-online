@@ -1,33 +1,7 @@
 <app-header></app-header>
 
-<section>
-  <form  >
-    <div class="inputText">
-      <mat-form-field appearance="outline">
-        <mat-label>Nome da Loja</mat-label>
-        <input matInput />
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Horário de funcionamento</mat-label>
-        <input matInput />
-      </mat-form-field>
-    </div>
-
-    <div><button mat-raised-button color="primary">Enviar</button></div>
-
-    <div class="inputFile">
-      <div>
-        <label for="capa">Alterar Capa</label>
-        <input type="file" name="capa" id="capa" />
-      </div>
-
-      <div>
-        <label for="perfil">Alterar Foto</label>
-        <input type="file" name="perfil" id="perfil" />
-      </div>
-    </div>
-  </form>
+<section class="editHeader">
+  <button mat-button (click)="openDialog()">Editar Informações do Cabeçalho</button>
 </section>
 
 <section class="tables">

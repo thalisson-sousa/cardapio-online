@@ -1,0 +1,33 @@
+<section>
+  <form>
+    <mat-form-field appearance="outline">
+      <mat-label>Nome da Loja</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Horário de funcionamento</mat-label>
+      <input matInput />
+    </mat-form-field>
+
+    <div class="fileInputs">
+      <div>
+        <label for="capa">
+          Alterar Capa
+          <mat-icon>attach_file</mat-icon>
+        </label>
+        <input type="file" name="capa" id="capa" />
+      </div>
+
+      <div>
+        <label for="perfil">
+          <span>Alterar Foto</span>
+          <mat-icon>attach_file</mat-icon>
+        </label>
+        <input type="file" name="perfil" id="perfil" />
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary">Enviar</button>
+  </form>
+</section>

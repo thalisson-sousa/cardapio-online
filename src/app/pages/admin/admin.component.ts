@@ -9,6 +9,8 @@ import {
 import { FirebaseServiceService } from 'src/app/services/firebase-service.service';
 import { Pedidos } from 'src/app/types/Pedidos';
 import { FoodsService } from 'src/app/services/foods.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AdminModalHeaderComponent } from 'src/app/components/admin-modal-header/admin-modal-header.component';
 
 @Component({
   selector: 'app-admin',
@@ -21,7 +23,7 @@ export class AdminComponent implements OnInit {
   categorys!: any;
   pedidos!: Pedidos[];
 
-  constructor(private firebaseService: FirebaseServiceService, private pedidoService: FoodsService) {}
+  constructor(private firebaseService: FirebaseServiceService, private pedidoService: FoodsService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.firebaseService.getCategory().subscribe((category) => {
@@ -31,6 +33,10 @@ export class AdminComponent implements OnInit {
     this.pedidoService.getFoods().subscribe((pedido) => {
       this.pedidos = pedido;
     })
+  }
+
+  openDialog() {
+    this.dialog.open(AdminModalHeaderComponent)
   }
 
   removeCategoria(id: any) {

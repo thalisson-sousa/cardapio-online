@@ -38,6 +38,7 @@ import { AccordionItemComponent } from './components/accordion-item/accordion-it
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AdminModalHeaderComponent } from './components/admin-modal-header/admin-modal-header.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { LoginComponent } from './pages/login/login.component';
     CartComponent,
     CartItemComponent,
     LoginComponent,
+    AdminModalHeaderComponent,
   ],
   imports: [
     BrowserModule,
