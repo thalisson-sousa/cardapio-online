@@ -1,11 +1,13 @@
-<section class="container" [ngStyle]="{'background-image': 'url(' + infos.capa + ')'}">
-  <div>
-    <img src="{{infos.image}}" alt="profile image">
-    <h1>{{infos.name}}</h1>
-    <button mat-raised-button (click)="openDialog()" >{{infos.status}}</button>
-    <span>
-      <mat-icon>schedule</mat-icon>
-      <p>{{infos.duration}}</p>
-    </span>
-  </div>
-</section>
+<header *ngIf="infos">
+  <section class="container" [ngStyle]="{'background-image': 'url(' + infos.capa + ')'}">
+    <div>
+      <img src="{{infos.image}}" alt="profile image">
+      <h1>{{infos.name}}</h1>
+      <button mat-raised-button (click)="openDialog()" >{{infos.status}}</button>
+      <span>
+        <mat-icon>schedule</mat-icon>
+        <p>{{infos.duration}}</p>
+      </span>
+    </div>
+  </section>
+</header>
