@@ -9,7 +9,7 @@ import {
 import { Observable } from 'rxjs';
 import { Pedidos } from '../types/Pedidos';
 import { PageInfo } from '../types/PageInfo';
-import { deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { deleteDoc, doc, setDoc, updateDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -49,14 +49,34 @@ export class FirebaseServiceService {
     }) as Observable<any[]>;
   }
 
+  // CRUD LANCHE
+
+  async addLanche(data: any) {
+    await setDoc(doc(this.foodsCollection), data)
+  }
+
+  async updateLanche(data: any, id: any) {
+    await updateDoc(doc(this.foodsCollection, id), data)
+  }
+
   async deletarLanche(id: any) {
     await deleteDoc(doc(this.foodsCollection, id))
+  }
+
+  // CRUD CATEGORIA
+  async addCategoria(data: any) {
+    await setDoc(doc(this.categoryCollection), data)
+  }
+
+  async updateCategoria(data: any, id: any) {
+    await updateDoc(doc(this.categoryCollection, id), data)
   }
 
   async deletarCategoria(id: any) {
     await deleteDoc(doc(this.categoryCollection, id))
   }
 
+  // UPDATE HEADER
   async updateHeader(data: any) {
     await updateDoc(doc(this.pageInfoCollection, "Ne7niw9tcfX6kMJZGJhi"), data)
   }
