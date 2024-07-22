@@ -9,7 +9,7 @@ import {
 import { Observable } from 'rxjs';
 import { Pedidos } from '../types/Pedidos';
 import { PageInfo } from '../types/PageInfo';
-import { deleteDoc, doc } from 'firebase/firestore';
+import { deleteDoc, doc, updateDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -55,5 +55,9 @@ export class FirebaseServiceService {
 
   async deletarCategoria(id: any) {
     await deleteDoc(doc(this.categoryCollection, id))
+  }
+
+  async updateHeader(data: any) {
+    await updateDoc(doc(this.pageInfoCollection, "Ne7niw9tcfX6kMJZGJhi"), data)
   }
 }

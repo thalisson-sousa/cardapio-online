@@ -16,7 +16,7 @@
           Alterar Capa
           <mat-icon>attach_file</mat-icon>
         </label>
-        <input type="file" name="capa" id="capa" formControlName="capa" />
+        <input type="file" name="capa" id="capa" formControlName="capa" (change)="handleCapaChange($event)" />
       </div>
 
       <div>
@@ -24,7 +24,7 @@
           <span>Alterar Foto</span>
           <mat-icon>attach_file</mat-icon>
         </label>
-        <input type="file" name="perfil" id="perfil" formControlName="image" />
+        <input type="file" name="perfil" id="perfil" formControlName="image" (change)="handleImageChange($event)" />
       </div>
     </div>
 
