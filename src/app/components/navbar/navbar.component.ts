@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { EventEmitterService } from 'src/app/services/event-emitter.service';
 
@@ -9,6 +9,7 @@ import { EventEmitterService } from 'src/app/services/event-emitter.service';
 })
 
 export class NavbarComponent {
+  @Input() show: boolean = true;
   @Output() Cart: EventEmitter<any> = new EventEmitter();
 
   name: string = "Mario Lanches";
