@@ -11,6 +11,8 @@ import { Pedidos } from 'src/app/types/Pedidos';
 import { FoodsService } from 'src/app/services/foods.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AdminModalHeaderComponent } from 'src/app/components/admin-modal-header/admin-modal-header.component';
+import { ModalCategoryComponent } from 'src/app/components/modal-category/modal-category.component';
+import { ModalFoodComponent } from 'src/app/components/modal-food/modal-food.component';
 
 @Component({
   selector: 'app-admin',
@@ -37,6 +39,14 @@ export class AdminComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(AdminModalHeaderComponent)
+  }
+
+  categoryDialog() {
+    this.dialog.open(ModalCategoryComponent)
+  }
+
+  foodDialog() {
+    this.dialog.open(ModalFoodComponent)
   }
 
   removeCategoria(id: any) {

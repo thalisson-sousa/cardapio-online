@@ -1,0 +1,15 @@
+section {
+  padding: 3em;
+  border-radius: 5px;
+
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}

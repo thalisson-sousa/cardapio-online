@@ -1,0 +1,10 @@
+<section>
+<h1>Adicionar Categoria</h1>
+  <form [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Insira a categoria:</mat-label>
+      <input matInput formControlName="categoria" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="submit()">Enviar</button>
+  </form>
+</section>

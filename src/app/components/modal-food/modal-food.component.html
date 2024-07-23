@@ -1,0 +1,26 @@
+<section>
+  <h1>Adicionar Lanche</h1>
+    <form [formGroup]="form">
+      <mat-form-field appearance="outline">
+        <mat-label>Insira o nome:</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Insira a descrição:</mat-label>
+        <input matInput formControlName="description" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Insira o preço:</mat-label>
+        <input matInput formControlName="price" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Insira a imagem:</mat-label>
+        <input matInput formControlName="img" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Insira a categoria:</mat-label>
+        <input matInput formControlName="categoria" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="submit()">Enviar</button>
+    </form>
+  </section>

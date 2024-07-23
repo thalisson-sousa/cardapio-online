@@ -42,6 +42,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminModalHeaderComponent } from './components/admin-modal-header/admin-modal-header.component';
+import { ModalCategoryComponent } from './components/modal-category/modal-category.component';
+import { ModalFoodComponent } from './components/modal-food/modal-food.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { AdminModalHeaderComponent } from './components/admin-modal-header/admin
     CartItemComponent,
     LoginComponent,
     AdminModalHeaderComponent,
+    ModalCategoryComponent,
+    ModalFoodComponent,
   ],
   imports: [
     BrowserModule,
