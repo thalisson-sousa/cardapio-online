@@ -1,24 +1,29 @@
-<app-navbar [show]="false" ></app-navbar>
+<app-navbar [show]="false"></app-navbar>
 <app-header></app-header>
 
 <section class="editHeader">
-  <button mat-button (click)="openDialog()">Editar Informações do Cabeçalho</button>
+  <button mat-button (click)="openDialog()">
+    Editar Informações do Cabeçalho
+  </button>
 </section>
 
 <section class="tables">
   <div>
     <div class="botao">
       <h3>Categorias</h3>
-      <button mat-button [matMenuTriggerFor]="menu1">
-        <mat-icon>arrow_drop_down_circle</mat-icon>
-      </button>
+      <mat-icon (click)="categoryDialog()">add_circle</mat-icon>
     </div>
     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
       <div *cdkVirtualFor="let item of categorys" class="example-item">
         {{ item.categoria }}
-        <span (click)="removeCategoria(item.id)"
-          ><mat-icon>delete</mat-icon></span
-        >
+        <div>
+          <span class="edit" (click)="categoryDialog()">
+            <mat-icon>edit</mat-icon>
+          </span>
+          <span class="delete" (click)="removeCategoria(item.id)">
+            <mat-icon>delete</mat-icon>
+          </span>
+        </div>
       </div>
     </cdk-virtual-scroll-viewport>
   </div>
@@ -26,27 +31,22 @@
   <div>
     <div class="botao">
       <h3>Lanches</h3>
-      <button mat-button [matMenuTriggerFor]="menu2">
-        <mat-icon>arrow_drop_down_circle</mat-icon>
-      </button>
+      <mat-icon (click)="foodDialog()">add_circle</mat-icon>
     </div>
     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
       <div *cdkVirtualFor="let item of pedidos" class="example-item">
         {{ item.title }}
-        <span (click)="removeItem(item.id)"><mat-icon>delete</mat-icon></span>
+        <div>
+          <span class="edit" (click)="foodDialog()">
+            <mat-icon>edit</mat-icon>
+          </span>
+          <span class="delete" (click)="removeItem(item.id)">
+            <mat-icon>delete</mat-icon>
+          </span>
+        </div>
       </div>
     </cdk-virtual-scroll-viewport>
   </div>
 </section>
 
 <app-footer></app-footer>
-
-<mat-menu #menu1="matMenu">
-  <button mat-menu-item (click)="categoryDialog()">Adicionar</button>
-  <button mat-menu-item>Editar</button>
-</mat-menu>
-
-<mat-menu #menu2="matMenu">
-  <button mat-menu-item (click)="foodDialog()">Adicionar</button>
-  <button mat-menu-item>Editar</button>
-</mat-menu>

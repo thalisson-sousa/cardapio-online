@@ -21,10 +21,15 @@
   flex-wrap: wrap;
 
   .botao {
-    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
 
-    button {
+    mat-icon {
       cursor: pointer;
+    }
+
+    mat-icon:hover {
+      color: lightgreen;
     }
   }
 
@@ -41,12 +46,16 @@
     padding: 0.5em;
     height: 50px;
 
-    span {
+    .delete, .edit {
       cursor: pointer;
     }
 
-    span:hover {
+    .delete:hover {
       color: red;
+    }
+
+    .edit:hover {
+      color: lightskyblue;
     }
   }
 }
