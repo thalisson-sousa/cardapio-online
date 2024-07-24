@@ -1,5 +1,5 @@
 <section>
-  <h1>Adicionar Lanche</h1>
+  <h1 *ngIf="id == 0; else noAdd">Adicionar Lanche</h1>
     <form [formGroup]="form">
       <mat-form-field appearance="outline">
         <mat-label>Insira o nome:</mat-label>
@@ -14,13 +14,27 @@
         <input matInput formControlName="price" />
       </mat-form-field>
       <mat-form-field appearance="outline">
-        <mat-label>Insira a imagem:</mat-label>
-        <input matInput formControlName="img" />
-      </mat-form-field>
-      <mat-form-field appearance="outline">
         <mat-label>Insira a categoria:</mat-label>
         <input matInput formControlName="categoria" />
       </mat-form-field>
-      <button mat-raised-button color="primary" (click)="submit()">Enviar</button>
+      <div class="input-file">
+        <label for="perfil">
+          <span>Alterar Foto</span>
+          <mat-icon>attach_file</mat-icon>
+        </label>
+        <input type="file" name="perfil" id="perfil" formControlName="img" (change)="handleImageChange($event)" />
+        <div *ngIf="id != 0">
+          <img class="preview" src="{{form.value.img}}" alt="{{form.value.title}}">
+        </div>
+      </div>
+      <button *ngIf="id == 0; else noSubmit" mat-raised-button color="primary" (click)="submit()">Adicionar</button>
     </form>
   </section>
+
+  <ng-template #noSubmit>
+    <button mat-raised-button color="primary" (click)="update()">Atualizar</button>
+  </ng-template>
+
+  <ng-template #noAdd>
+    <h1>Editar Lanche</h1>
+  </ng-template>

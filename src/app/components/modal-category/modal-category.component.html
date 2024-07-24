@@ -1,10 +1,18 @@
 <section>
-<h1>Adicionar Categoria</h1>
+  <h1 *ngIf="id == 0; else noAdd">Adicionar Categoria</h1>
   <form [formGroup]="form">
     <mat-form-field appearance="outline">
       <mat-label>Insira a categoria:</mat-label>
       <input matInput formControlName="categoria" />
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="submit()">Enviar</button>
+    <button *ngIf="id == 0; else noSubmit" mat-raised-button color="primary" (click)="submit()">Adicionar</button>
   </form>
 </section>
+
+<ng-template #noSubmit>
+  <button mat-raised-button color="primary" (click)="update()">Atualizar</button>
+</ng-template>
+
+<ng-template #noAdd>
+  <h1>Editar Categoria</h1>
+</ng-template>

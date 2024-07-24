@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FirebaseServiceService } from 'src/app/services/firebase-service.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-modal-food',
@@ -17,20 +19,48 @@ export class ModalFoodComponent implements OnInit {
     title: new FormControl('')
   });
 
-  constructor(private formBuilder: FormBuilder, private service: FirebaseServiceService) {}
+  constructor(private formBuilder: FormBuilder, private storegeService: StorageService, private service: FirebaseServiceService, @Inject(MAT_DIALOG_DATA) public id: number) {}
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      categoria: '',
-      description: '',
-      img: '',
-      price: 0,
-      title: '',
-    })
+    if(this.id != 0) {
+      this.service.getFoods().subscribe(itens => {
+        itens.filter((item) => item.id == String(this.id)).map((food) => {
+
+          this.form = this.formBuilder.group({
+            categoria: `${food.categoria}`,
+            description: `${food.description}`,
+            img: `${food.img}`,
+            price: food.price,
+            title: `${food.title}`,
+          })
+        })
+      })
+    } else {
+      this.form = this.formBuilder.group({
+        categoria: '',
+        description: '',
+        img: '',
+        price: 0,
+        title: '',
+      })
+    }
   }
 
   async submit() {
     await this.service.addLanche(this.form.value);
+  }
+
+  async update() {
+    this.service.updateLanche(this.form.value, this.id)
+  }
+
+  async handleImageChange(event: any) {
+    const file = event.target.files[0];
+    if(file) {
+      const url = await this.storegeService.uploadCapa(file);
+      this.form.value.img = url;
+      console.log(url);
+    }
   }
 
 }

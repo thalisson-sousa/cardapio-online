@@ -11,13 +11,13 @@
   <div>
     <div class="botao">
       <h3>Categorias</h3>
-      <mat-icon (click)="categoryDialog()">add_circle</mat-icon>
+      <mat-icon (click)="categoryDialog(0)">add_circle</mat-icon>
     </div>
     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
       <div *cdkVirtualFor="let item of categorys" class="example-item">
         {{ item.categoria }}
         <div>
-          <span class="edit" (click)="categoryDialog()">
+          <span class="edit" (click)="categoryDialog(item.id)">
             <mat-icon>edit</mat-icon>
           </span>
           <span class="delete" (click)="removeCategoria(item.id)">
@@ -31,13 +31,13 @@
   <div>
     <div class="botao">
       <h3>Lanches</h3>
-      <mat-icon (click)="foodDialog()">add_circle</mat-icon>
+      <mat-icon (click)="foodDialog(0)">add_circle</mat-icon>
     </div>
     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
       <div *cdkVirtualFor="let item of pedidos" class="example-item">
         {{ item.title }}
         <div>
-          <span class="edit" (click)="foodDialog()">
+          <span class="edit" (click)="foodDialog(item.id)">
             <mat-icon>edit</mat-icon>
           </span>
           <span class="delete" (click)="removeItem(item.id)">

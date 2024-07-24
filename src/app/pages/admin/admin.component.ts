@@ -41,12 +41,18 @@ export class AdminComponent implements OnInit {
     this.dialog.open(AdminModalHeaderComponent)
   }
 
-  categoryDialog() {
-    this.dialog.open(ModalCategoryComponent)
+  categoryDialog(id: any) {
+    this.dialog.open(ModalCategoryComponent, {
+      width: 'auto',
+      data: id,
+    })
   }
 
-  foodDialog() {
-    this.dialog.open(ModalFoodComponent)
+  foodDialog(id: any) {
+    this.dialog.open(ModalFoodComponent, {
+      width: 'auto',
+      data: id,
+    })
   }
 
   removeCategoria(id: any) {
