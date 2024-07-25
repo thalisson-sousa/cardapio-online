@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { FirebaseServiceService } from 'src/app/services/firebase-service.service';
+import { FirebaseServiceService } from 'src/app/services/firebase.service';
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({

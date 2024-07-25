@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FirebaseServiceService } from 'src/app/services/firebase-service.service';
+import { FirebaseServiceService } from 'src/app/services/firebase.service';
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({

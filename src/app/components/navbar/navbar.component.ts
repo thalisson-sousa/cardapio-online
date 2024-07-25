@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { EventEmitterService } from 'src/app/services/event-emitter.service';
-import { FirebaseServiceService } from 'src/app/services/firebase-service.service';
+import { FirebaseServiceService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-navbar',

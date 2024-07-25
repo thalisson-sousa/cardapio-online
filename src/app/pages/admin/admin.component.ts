@@ -6,7 +6,7 @@ import {
   CdkDrag,
   CdkDropList,
 } from '@angular/cdk/drag-drop';
-import { FirebaseServiceService } from 'src/app/services/firebase-service.service';
+import { FirebaseServiceService } from 'src/app/services/firebase.service';
 import { Pedidos } from 'src/app/types/Pedidos';
 import { FoodsService } from 'src/app/services/foods.service';
 import { MatDialog } from '@angular/material/dialog';
