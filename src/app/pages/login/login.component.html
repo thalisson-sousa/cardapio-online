@@ -7,20 +7,21 @@
   </div>
   <div class="container">
     <div class="img"></div>
-    <div class="container-form">
+    <div class="container-form" [formGroup]="formLogin">
       <mat-form-field>
         <mat-label>Enter your email</mat-label>
-        <input matInput placeholder="pat@example.com" required>
-        <mat-error ></mat-error>
+        <input matInput placeholder="pat@example.com" formControlName="email" required>
+        <mat-error *ngIf="formLogin.get('email')?.hasError">E-mail deve conter um valor válido</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'">
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
+        <mat-error *ngIf="formLogin.get('senha')?.hasError">senha deve conter um valor válido</mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="primary" (click)="login()" [disabled]="!formLogin.valid">Login</button>
     </div>
   </div>
 </section>

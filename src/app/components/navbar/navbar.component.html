@@ -9,19 +9,19 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button *ngIf="show" mat-menu-item routerLink="/login">
+      <button *ngIf="!authenticated" mat-menu-item routerLink="/login">
         <mat-icon>person</mat-icon>
         <span>Login</span>
       </button>
-      <button mat-menu-item>
-        <mat-icon>notifications_off</mat-icon>
-        <span>Disable alerts</span>
+      <button *ngIf="authenticated && show" mat-menu-item routerLink="/admin">
+        <mat-icon>person</mat-icon>
+        <span>Admin</span>
       </button>
       <button mat-menu-item>
         <mat-icon>info</mat-icon>
         <span>Sobre</span>
       </button>
-      <button *ngIf="!show" mat-menu-item routerLink="/">
+      <button *ngIf="!show" mat-menu-item (click)="logout()">
         <mat-icon>person</mat-icon>
         <span>Logout</span>
       </button>
