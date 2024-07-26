@@ -10,6 +10,7 @@ import { StorageService } from 'src/app/services/storage.service';
   styleUrls: ['./modal-food.component.scss']
 })
 export class ModalFoodComponent implements OnInit {
+  categorys!: any;
 
   form = new FormGroup({
     categoria: new FormControl(''),
@@ -44,6 +45,7 @@ export class ModalFoodComponent implements OnInit {
         title: '',
       })
     }
+    this.getCategoria();
   }
 
   async submit() {
@@ -54,12 +56,17 @@ export class ModalFoodComponent implements OnInit {
     this.service.updateLanche(this.form.value, this.id)
   }
 
+  async getCategoria() {
+    await this.service.getCategory().subscribe((data) => {
+      this.categorys = data;
+    })
+  }
+
   async handleImageChange(event: any) {
     const file = event.target.files[0];
     if(file) {
       const url = await this.storegeService.uploadCapa(file);
       this.form.value.img = url;
-      console.log(url);
     }
   }
 

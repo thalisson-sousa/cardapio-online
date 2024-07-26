@@ -43,7 +43,7 @@ export class FirebaseServiceService {
     ) as Observable<Pedidos[]>;
   }
 
-  getCategory(): Observable<any[]> {
+ getCategory(): Observable<any[]> {
     return collectionData(this.categoryCollection, {
       idField: 'id',
     }) as Observable<any[]>;

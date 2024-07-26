@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatSelectModule } from '@angular/material/select';
 
 import { UserComponent } from './pages/user/user.component';
 import { AdminComponent } from './pages/admin/admin.component';
@@ -86,6 +87,7 @@ import { ModalFoodComponent } from './components/modal-food/modal-food.component
     MatSidenavModule,
     MatFormFieldModule,
     ScrollingModule,
+    MatSelectModule
   ],
   providers: [
     importProvidersFrom([

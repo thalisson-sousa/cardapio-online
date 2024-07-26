@@ -13,10 +13,17 @@
         <mat-label>Insira o preço:</mat-label>
         <input matInput formControlName="price" />
       </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Insira a categoria:</mat-label>
-        <input matInput formControlName="categoria" />
+
+      <mat-form-field>
+        <mat-label>Selecione a Categoria</mat-label>
+        <mat-select formControlName="categoria">
+          <mat-option *ngFor="let category of categorys" [value]="category.categoria">
+            {{category.categoria}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
+
+        <!-- <input matInput formControlName="categoria" /> -->
       <div class="input-file">
         <label for="perfil">
           <span>Alterar Foto</span>
