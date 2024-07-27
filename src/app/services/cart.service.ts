@@ -12,7 +12,11 @@ export class CartService {
   constructor() {}
 
   addCart(pedido: Pedidos) {
-    this.carts.push(pedido);
+    if(this.carts.includes(pedido)) {
+      this.carts.splice(this.carts.indexOf(pedido), 1, pedido)
+    } else {
+      this.carts.push(pedido);
+    }
   }
 
   getCart(): Observable<Pedidos[]> {

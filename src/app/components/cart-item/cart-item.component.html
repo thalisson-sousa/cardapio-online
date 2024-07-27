@@ -2,27 +2,8 @@
   <div class="cart-item-content">
     <img src="{{ item.img }}" alt="imagem do produto" class="cart-item-img" />
     <h3 class="cart-item-title">{{ item.title }}</h3>
-
-    <div data-app="product.quantity" id="quantidade">
-      <label class="label-text">Qtd:</label>
-      <div class="input-quantidade">
-        <input type="button" id="plus" value="-" />
-        <input
-          id="quant"
-          name="quant"
-          class="text"
-          size="1"
-          minLength="1"
-          type="text"
-          value="5"
-          maxlength="5"
-        />
-        <input type="button" id="minus" value="+" />
-      </div>
-    </div>
-
-    <h3 class="cart-item-price">R${{item.price}}.00</h3>
-
+    <p class="cart-item-title">Qtd: {{item.qtd}}</p>
+    <h3 class="cart-item-price">R${{item.price * item.qtd}}.00</h3>
   </div>
 </div>
 <mat-divider></mat-divider>
