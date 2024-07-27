@@ -23,6 +23,13 @@ section {
     width: 400px;
   }
 
+  .price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .observations {
     display: flex;
     flex-direction: column;
@@ -33,6 +40,17 @@ section {
     gap: 1em;
     justify-content: flex-end;
     margin-right: 1em;
+  }
+
+  #quantidade {
+    margin-bottom: 1em;
+
+    .input-quantidade {
+      input {
+
+        border: none;
+      }
+    }
   }
 }
 

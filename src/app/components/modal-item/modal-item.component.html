@@ -1,27 +1,47 @@
-<section>
-  <img src="{{pedidos.img}}" alt="{{pedidos.title}}">
-  <div class="order">
-    <h3>DETALHES</h3>
-    <mat-divider></mat-divider>
-    <h1>{{pedidos.title}}</h1>
-    <span>R$ {{pedidos.price}},00</span>
-    <p>{{pedidos.description}}</p>
+<form [formGroup]="form">
+  <section>
+    <img src="{{pedidos.img}}" alt="{{pedidos.title}}">
+    <div class="order">
+      <h3>DETALHES</h3>
+      <mat-divider></mat-divider>
+      <h1>{{pedidos.title}}</h1>
+      <p>{{pedidos.description}}</p>
+      <div class="price">
+        <div data-app="product.quantity" id="quantidade">
+          <label class="label-text">Qtd:</label>
+          <div class="input-quantidade">
+            <input type="button" id="plus" value="-" (click)="decrement()" />
+            <input
+              id="quant"
+              name="quant"
+              class="text"
+              size="1"
+              minLength="1"
+              type="text"
+              value={{form.value.qtd}}
+              maxlength="5"
+            />
+            <input type="button" id="minus" value="+" (click)="increment()" />
+          </div>
+        </div>
+        <span>R$ {{pedidos.price * form.value.qtd!}},00</span>
+      </div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Observações</mat-label>
+        <textarea matInput placeholder="Ex. Retirar tomate..."></textarea>
+      </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Observações</mat-label>
-      <textarea matInput placeholder="Ex. Retirar tomate..."></textarea>
-    </mat-form-field>
-
-    <div class="actions">
-      <button mat-raised-button color="primary" (click)="addCart(pedidos)">
-        <mat-icon>shopping_cart</mat-icon>
-        Carrinho
-      </button>
-      <button mat-raised-button color="warn">
-        <mat-icon>check_box</mat-icon>
-        Pedir
-      </button>
+      <div class="actions">
+        <button mat-raised-button color="primary" (click)="addCart(pedidos)">
+          <mat-icon>shopping_cart</mat-icon>
+          Carrinho
+        </button>
+        <button mat-raised-button color="warn">
+          <mat-icon>check_box</mat-icon>
+          Pedir
+        </button>
+      </div>
+      <div *ngIf=""></div>
     </div>
-    <div *ngIf=""></div>
-  </div>
-</section>
+  </section>
+</form>
