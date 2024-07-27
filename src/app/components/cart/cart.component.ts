@@ -33,7 +33,7 @@ export class CartComponent implements OnInit {
 
   somar(): void {
     let valor = this.itens.reduce((result, item) => {
-      return (result + item.price)
+      return (result + (item.price * item.qtd))
     }, 0);
 
     this.total = valor

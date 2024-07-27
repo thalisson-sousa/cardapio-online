@@ -8,7 +8,7 @@
 
 .cart-item-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 10px 35px 10px 10px;
@@ -36,7 +36,7 @@
 }
 
 .label-text {
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .input-quantidade {
