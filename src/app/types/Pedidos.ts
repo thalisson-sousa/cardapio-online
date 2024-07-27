@@ -6,5 +6,4 @@ export interface Pedidos {
   description: string,
   img: string,
   categoria: string,
-  qtd: number,
   }
