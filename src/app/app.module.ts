@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { HttpClientModule } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
 
@@ -23,6 +24,8 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatSelectModule } from '@angular/material/select';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatCardModule } from '@angular/material/card';
 
 import { UserComponent } from './pages/user/user.component';
 import { AdminComponent } from './pages/admin/admin.component';
@@ -45,6 +48,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { AdminModalHeaderComponent } from './components/admin-modal-header/admin-modal-header.component';
 import { ModalCategoryComponent } from './components/modal-category/modal-category.component';
 import { ModalFoodComponent } from './components/modal-food/modal-food.component';
+import { OrderComponent } from './components/order/order.component';
+import { PayGoogleComponent } from './components/pay-google/pay-google.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +70,7 @@ import { ModalFoodComponent } from './components/modal-food/modal-food.component
     AdminModalHeaderComponent,
     ModalCategoryComponent,
     ModalFoodComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +79,7 @@ import { ModalFoodComponent } from './components/modal-food/modal-food.component
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebase),
     ReactiveFormsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -87,7 +94,10 @@ import { ModalFoodComponent } from './components/modal-food/modal-food.component
     MatSidenavModule,
     MatFormFieldModule,
     ScrollingModule,
-    MatSelectModule
+    MatSelectModule,
+    MatStepperModule,
+    PayGoogleComponent,
+    MatCardModule
   ],
   providers: [
     importProvidersFrom([

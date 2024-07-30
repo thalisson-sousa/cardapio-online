@@ -1,0 +1,9 @@
+<div>
+  <google-pay-button
+  environment="TEST"
+  buttonColor="black"
+  buttonType="buy"
+  [paymentRequest]="paymentRequest" [style.width.px]="buttonWidth"
+  (loadpaymentdata)="onLoadPaymentData($event)"
+  ></google-pay-button>
+</div>
