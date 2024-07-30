@@ -1,0 +1,79 @@
+<section>
+  <app-navbar></app-navbar>
+  <div>
+    <mat-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Identificação</ng-template>
+          <div class="container">
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Last name, First name" formControlName="Ctrl">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Contato</mat-label>
+              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" label="Entrega">
+        <form [formGroup]="secondFormGroup">
+          <div class="container">
+            <mat-form-field>
+              <mat-label>CEP</mat-label>
+              <input
+                matInput
+                formControlName="secondCtrl"
+                placeholder="Informe seu CEP"
+                required
+                (change)="cep($event)"
+                >
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Numero</mat-label>
+              <input
+                matInput
+                formControlName="numHouse"
+                placeholder="Numero da casa"
+                required
+                (change)="cep($event)"
+                >
+            </mat-form-field>
+            <mat-card *ngIf="data">
+              <mat-card-content>
+                <p>{{data.logradouro}}</p>
+                <p>{{data.complemento}}</p>
+                <p>{{data.bairro}}</p>
+                <p>{{data.localidade}}</p>
+                <p>{{data.uf}}</p>
+                <p>{{data.cep}}</p>
+              </mat-card-content>
+            </mat-card>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Pagamento</ng-template>
+        <div class="container">
+          <app-pay-google></app-pay-google>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+          </div>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</section>
