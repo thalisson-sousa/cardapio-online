@@ -1,22 +1,26 @@
 <section>
   <app-navbar></app-navbar>
   <div>
+
     <mat-stepper [linear]="isLinear" #stepper>
-      <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup">
+      <mat-step [stepControl]="identifier">
+        <form [formGroup]="identifier">
           <ng-template matStepLabel>Identificação</ng-template>
           <div class="container">
             <mat-form-field>
               <mat-label>Name</mat-label>
-              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+              <mat-error *ngIf="identifier.get('name')?.errors">Campo obrigatório</mat-error>
+              <input matInput placeholder="Informe seu nome" formControlName="name" required>
             </mat-form-field>
             <mat-form-field>
               <mat-label>Email</mat-label>
-              <input matInput placeholder="Last name, First name" formControlName="Ctrl">
+              <input matInput placeholder="Compartilhe seu email" formControlName="email">
+              <mat-error *ngIf="identifier.get('email')?.errors">Email informado não é valido</mat-error>
             </mat-form-field>
             <mat-form-field>
               <mat-label>Contato</mat-label>
-              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+              <input matInput placeholder="Numero para contato" formControlName="contact" required>
+              <mat-error *ngIf="identifier.get('contact')?.errors">Campo obrigatório</mat-error>
             </mat-form-field>
             <div>
               <button mat-button matStepperNext>Next</button>
@@ -24,18 +28,20 @@
           </div>
         </form>
       </mat-step>
-      <mat-step [stepControl]="secondFormGroup" label="Entrega">
-        <form [formGroup]="secondFormGroup">
+
+      <mat-step [stepControl]="address" label="Entrega">
+        <form [formGroup]="address">
           <div class="container">
             <mat-form-field>
               <mat-label>CEP</mat-label>
               <input
                 matInput
-                formControlName="secondCtrl"
+                formControlName="cep"
                 placeholder="Informe seu CEP"
                 required
                 (change)="cep($event)"
                 >
+              <mat-error *ngIf="address.get('cep')?.errors">Campo obrigatório</mat-error>
             </mat-form-field>
             <mat-form-field>
               <mat-label>Numero</mat-label>
@@ -46,6 +52,7 @@
                 required
                 (change)="cep($event)"
                 >
+              <mat-error *ngIf="address.get('numHouse')?.errors">Campo obrigatório</mat-error>
             </mat-form-field>
             <mat-card *ngIf="data">
               <mat-card-content>
@@ -64,10 +71,12 @@
           </div>
         </form>
       </mat-step>
+
       <mat-step>
         <ng-template matStepLabel>Pagamento</ng-template>
         <div class="container">
           <app-pay-google></app-pay-google>
+          <button mat-flat-button color="primary" (click)="submit()">Pedir</button>
           <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button (click)="stepper.reset()">Reset</button>
@@ -75,5 +84,6 @@
         </div>
       </mat-step>
     </mat-stepper>
+
   </div>
 </section>
