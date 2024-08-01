@@ -50,7 +50,7 @@
                 formControlName="numHouse"
                 placeholder="Numero da casa"
                 required
-                (change)="cep($event)"
+                (change)="getNum($event)"
                 >
               <mat-error *ngIf="address.get('numHouse')?.errors">Campo obrigatório</mat-error>
             </mat-form-field>
@@ -66,7 +66,7 @@
             </mat-card>
             <div>
               <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
+              <button mat-button matStepperNext (click)="submit()">Next</button>
             </div>
           </div>
         </form>
@@ -74,13 +74,20 @@
 
       <mat-step>
         <ng-template matStepLabel>Pagamento</ng-template>
-        <div class="container">
-          <app-pay-google></app-pay-google>
-          <button mat-flat-button color="primary" (click)="submit()">Pedir</button>
+        <div class="pagStep">
           <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
+            <div class="cardItem" *ngFor="let item of state">
+              <img src={{item.img}} alt="">
+              <div class="valors">
+                <p>{{item.title}}</p>
+                <p>R${{item.price * item.qtd}},00</p>
+              </div>
+            </div>
+            <p>Frete: R${{frete}},00</p>
+            <p style="font-weight: bold; font-size: 18px;">Total: R${{total}},00</p>
           </div>
+          <mat-divider vertical style="height:100px"></mat-divider>
+          <app-pay-google></app-pay-google>
         </div>
       </mat-step>
     </mat-stepper>

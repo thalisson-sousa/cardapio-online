@@ -1,8 +1,41 @@
-.container {
+.container, .pagStep {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   width: 100%;
   height: 70dvh;
+}
+
+.container {
+  flex-direction: column;
+}
+
+.pagStep {
+  div {
+    display: flex;
+    flex-direction: column;
+
+    .cardItem {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1em;
+      margin-bottom: 1em;
+
+      .valors {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1em;
+        width: 100%;
+      }
+
+      img {
+        width: 60px;
+      }
+    }
+  }
+  gap: 2em;
 }
