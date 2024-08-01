@@ -12,8 +12,9 @@ export class OrderService {
 
   constructor() {}
 
-  async addOrder(identifier: any, address: any, cep: Cep) {
-    const data = {...identifier, ...address, ...cep}
+  async addOrder(identifier: any, address: any, valor: number, pedido: string, Quantidade: any) {
+    let dataPedido = new Date()
+    const data = {...identifier, ...address, valor, pedido, Quantidade, dataPedido}
     await setDoc(doc(this.categoryCollection), data);
   }
 }
