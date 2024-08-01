@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { EventEmitterService } from 'src/app/services/event-emitter.service';
 import { Pedidos } from 'src/app/types/Pedidos';
@@ -12,7 +13,7 @@ export class CartComponent implements OnInit {
   itens: Pedidos[] = [];
   total = 0;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit(): void {
     this.add()
@@ -39,4 +40,12 @@ export class CartComponent implements OnInit {
     this.total = valor
   }
 
+  buy() {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        data: this.itens
+      }
+    };
+    this.router.navigate(['order'], navigationExtras)
+  }
 }
