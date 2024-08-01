@@ -4,5 +4,6 @@ export interface Cep {
   cep: string,
   bairro: string,
   localidade: string,
-  uf: string
+  uf: string,
+  casa: string
 }
