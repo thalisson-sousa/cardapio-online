@@ -40,10 +40,6 @@ section {
       align-items: center;
     }
 
-    mat-form-field, button {
-      width: 26.5rem;
-    }
-
     .input-file {
       display: flex;
       justify-content: space-between;
@@ -59,6 +55,12 @@ section {
 
 @media (min-width: 1024px) {
   section {
-    width: 25rem;
+    width: 500px;
+
+    form {
+      mat-form-field {
+        width: 300px;
+      }
+    }
   }
 }
