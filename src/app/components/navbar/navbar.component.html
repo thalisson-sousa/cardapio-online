@@ -9,11 +9,15 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/">
+        <mat-icon>store</mat-icon>
+        <span>Loja</span>
+      </button>
       <button *ngIf="!authenticated" mat-menu-item routerLink="/login">
-        <mat-icon>person</mat-icon>
+        <mat-icon>login</mat-icon>
         <span>Login</span>
       </button>
-      <button *ngIf="authenticated && show" mat-menu-item routerLink="/admin">
+      <button mat-menu-item routerLink="/admin">
         <mat-icon>person</mat-icon>
         <span>Admin</span>
       </button>

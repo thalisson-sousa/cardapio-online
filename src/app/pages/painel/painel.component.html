@@ -1,0 +1,130 @@
+<app-navbar [show]="false"></app-navbar>
+<section>
+  <h1>Painel de Pedidos</h1>
+
+  <div class="painels">
+    <app-painel-card-central title="Novo Pedido">
+      <app-painel-card-item *ngFor="let order of novo">
+        <div>
+          <mat-accordion>
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title *ngIf="order.status == 'novo'" > {{ order.pedido }} </mat-panel-title>
+                <mat-panel-description>
+                  {{order.name}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="expansion-itens">
+                <p>{{order.logradouro}}</p>
+                <p>{{order.casa}}</p>
+                <p>{{order.bairro}}</p>
+                <p>{{order.cep}}</p>
+                <p>{{order.localidade}}</p>
+                <p>Contato: {{order.contact}}</p>
+                <p>Quantidade: {{order.Quantidade}}</p>
+                <p>Valor: {{order.valor}}</p>
+              </div>
+              <button mat-raised-button color="primary" (click)="update(order)">Proximo</button>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </app-painel-card-item>
+    </app-painel-card-central>
+
+    <app-painel-card-central title="Preparando">
+      <app-painel-card-item *ngFor="let order of preparando">
+        <div>
+          <mat-accordion>
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title *ngIf="order.status == 'preparando'" > {{ order.pedido }} </mat-panel-title>
+                <mat-panel-description>
+                  {{order.name}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="expansion-itens">
+                <p>{{order.logradouro}}</p>
+                <p>{{order.casa}}</p>
+                <p>{{order.bairro}}</p>
+                <p>{{order.cep}}</p>
+                <p>{{order.localidade}}</p>
+                <p>Contato: {{order.contact}}</p>
+                <p>Quantidade: {{order.Quantidade}}</p>
+                <p>Valor: {{order.valor}}</p>
+              </div>
+              <button mat-raised-button color="primary" (click)="update(order)">Proximo</button>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </app-painel-card-item>
+    </app-painel-card-central>
+
+    <app-painel-card-central title="Pronto">
+      <app-painel-card-item *ngFor="let order of pronto">
+        <div>
+          <mat-accordion>
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title *ngIf="order.status == 'pronto'" > {{ order.pedido }} </mat-panel-title>
+                <mat-panel-description>
+                  {{order.name}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="expansion-itens">
+                <p>{{order.logradouro}}</p>
+                <p>{{order.casa}}</p>
+                <p>{{order.bairro}}</p>
+                <p>{{order.cep}}</p>
+                <p>{{order.localidade}}</p>
+                <p>Contato: {{order.contact}}</p>
+                <p>Quantidade: {{order.Quantidade}}</p>
+                <p>Valor: {{order.valor}}</p>
+              </div>
+              <button mat-raised-button color="primary" (click)="update(order)">Proximo</button>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </app-painel-card-item>
+    </app-painel-card-central>
+
+    <app-painel-card-central title="Saiu para a Entrega">
+      <app-painel-card-item *ngFor="let order of entrega">
+        <div>
+          <mat-accordion>
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title *ngIf="order.status == 'entrega'" > {{ order.pedido }} </mat-panel-title>
+                <mat-panel-description>
+                  {{order.name}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="expansion-itens">
+                <p>{{order.logradouro}}</p>
+                <p>{{order.casa}}</p>
+                <p>{{order.bairro}}</p>
+                <p>{{order.cep}}</p>
+                <p>{{order.localidade}}</p>
+                <p>Contato: {{order.contact}}</p>
+                <p>Quantidade: {{order.Quantidade}}</p>
+                <p>Valor: {{order.valor}}</p>
+              </div>
+              <button mat-raised-button color="primary" (click)="update(order)">Proximo</button>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </app-painel-card-item>
+    </app-painel-card-central>
+  </div>
+</section>

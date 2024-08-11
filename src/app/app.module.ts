@@ -50,6 +50,9 @@ import { ModalCategoryComponent } from './components/modal-category/modal-catego
 import { ModalFoodComponent } from './components/modal-food/modal-food.component';
 import { OrderComponent } from './components/order/order.component';
 import { PayGoogleComponent } from './components/pay-google/pay-google.component';
+import { PainelComponent } from './pages/painel/painel.component';
+import { PainelCardCentralComponent } from './components/painel-card-central/painel-card-central.component';
+import { PainelCardItemComponent } from './components/painel-card-item/painel-card-item.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +74,9 @@ import { PayGoogleComponent } from './components/pay-google/pay-google.component
     ModalCategoryComponent,
     ModalFoodComponent,
     OrderComponent,
+    PainelComponent,
+    PainelCardCentralComponent,
+    PainelCardItemComponent,
   ],
   imports: [
     BrowserModule,

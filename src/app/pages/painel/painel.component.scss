@@ -1,0 +1,21 @@
+section {
+  background-color: #673ab7;
+  padding-top: 1em;
+
+  h1 {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .painels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 1em;
+
+    .expansion-itens {
+      text-align: left;
+    }
+  }
+
+}

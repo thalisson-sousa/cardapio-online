@@ -1,0 +1,21 @@
+section {
+
+  .cardCentral {
+    text-align: center;
+    background-color: aliceblue;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    max-width: 350px;
+    height: 100dvh;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      gap: 1em;
+    }
+
+  }
+}
