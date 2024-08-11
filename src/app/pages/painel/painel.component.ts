@@ -20,7 +20,6 @@ export class PainelComponent implements OnInit {
     //Busca novos pedidos
     this.orderService.getOrdersFilterByStaus('novo').subscribe((order) => {
       this.novo = order;
-      console.log(this.novo);
     })
 
     //Busca pedidos em andamento
