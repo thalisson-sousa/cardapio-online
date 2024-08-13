@@ -10,16 +10,16 @@
             <mat-form-field>
               <mat-label>Name</mat-label>
               <mat-error *ngIf="identifier.get('name')?.errors">Campo obrigatório</mat-error>
-              <input matInput placeholder="Informe seu nome" formControlName="name" required>
+              <input matInput placeholder="Informe seu nome" formControlName="name" required minlength="3">
             </mat-form-field>
             <mat-form-field>
               <mat-label>Email</mat-label>
-              <input matInput placeholder="Compartilhe seu email" formControlName="email">
+              <input matInput placeholder="Compartilhe seu email" formControlName="email" email>
               <mat-error *ngIf="identifier.get('email')?.errors">Email informado não é valido</mat-error>
             </mat-form-field>
             <mat-form-field>
               <mat-label>Contato</mat-label>
-              <input matInput placeholder="Numero para contato" formControlName="contact" required>
+              <input matInput placeholder="Numero para contato" formControlName="contact" required minlength="8">
               <mat-error *ngIf="identifier.get('contact')?.errors">Campo obrigatório</mat-error>
             </mat-form-field>
             <div>
