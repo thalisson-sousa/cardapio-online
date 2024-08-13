@@ -4,6 +4,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Pedidos } from 'src/app/types/Pedidos';
 import { EventEmitterService } from 'src/app/services/event-emitter.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ShowCartService } from 'src/app/services/show-cart.service';
 
 @Component({
   selector: 'app-modal-item',
@@ -15,7 +16,7 @@ export class ModalItemComponent implements OnInit {
     qtd: new FormControl(0)
   });
 
-  constructor(@Inject(MAT_DIALOG_DATA) public pedidos: Pedidos, private serviceCart: CartService, private formBuilder: FormBuilder) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public pedidos: Pedidos, private serviceCart: CartService, private formBuilder: FormBuilder, private showCart: ShowCartService) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -27,6 +28,7 @@ export class ModalItemComponent implements OnInit {
     data.qtd = this.form.value.qtd!;
     this.serviceCart.addCart(data);
     EventEmitterService.get('updateNumberCart').emit();
+    this.showCart.toggleCart(true);
   }
 
   decrement(){
