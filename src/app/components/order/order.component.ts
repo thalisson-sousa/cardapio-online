@@ -68,11 +68,20 @@ export class OrderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const user = this.getFromlocalStorage('user');
+    const address = this.getFromlocalStorage('address');
+
     this.identifier = this.formBuilder.group({
-      name: '',
-      email: '',
-      contact: '',
+      name: `${user.name}`,
+      email: `${user.email}`,
+      contact: `${user.contact}`,
     });
+
+    this.address = this.formBuilder.group({
+      cep: `${address.cep}`,
+      numHouse: `${address.numHouse}`,
+    });
+
     this.cdr.detectChanges();
   }
 
@@ -98,6 +107,18 @@ export class OrderComponent implements OnInit {
       let Quantidade = item.qtd;
       let Valor = item.price * item.qtd;
       this.order.addOrder(this.identifier.value, this.data, Valor, Pedido, Quantidade);
+      this.saveToLocalStorage('user', this.identifier.value)
+      this.saveToLocalStorage('address', this.address.value)
     })
+  }
+
+  saveToLocalStorage(key: string, data: any) {
+    const jsonData = JSON.stringify(data);
+    localStorage.setItem(key, jsonData);
+  }
+
+  getFromlocalStorage(key: string) {
+    const jsonData = localStorage.getItem(key);
+    return jsonData ? JSON.parse(jsonData) : null;
   }
 }
