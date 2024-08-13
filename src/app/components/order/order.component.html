@@ -23,7 +23,7 @@
               <mat-error *ngIf="identifier.get('contact')?.errors">Campo obrigatório</mat-error>
             </mat-form-field>
             <div>
-              <button mat-button matStepperNext>Next</button>
+              <button mat-button matStepperNext [disabled]="!identifier.valid" >Next</button>
             </div>
           </div>
         </form>
@@ -66,7 +66,7 @@
             </mat-card>
             <div>
               <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext (click)="submit()">Next</button>
+              <button mat-button matStepperNext (click)="submit()" [disabled]="!address.valid">Next</button>
             </div>
           </div>
         </form>
